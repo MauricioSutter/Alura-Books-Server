@@ -40,7 +40,7 @@ function atualizaLivro(modificacoes, id){
 function excluiLivroPorId(id){
 
     let livrosAtuais = JSON.parse(fs.readFileSync("livros.json"))
-    const indiceModificado = livrosAtuais.findIndex(livro => livro.id !== parseInt(id))
+    const indiceModificado = livrosAtuais.filter(livro => livro.id !== parseInt(id))
     fs.writeFileSync("livros.json", JSON.stringify(indiceModificado))
 
 }
